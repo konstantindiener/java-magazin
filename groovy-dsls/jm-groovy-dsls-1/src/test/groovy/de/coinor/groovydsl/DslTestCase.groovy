@@ -19,7 +19,7 @@ class DslTestCase extends GroovyTestCase {
 	}
 	
 	@Test
-	public void testMonatlichFreiVerfügbarerBetrag1() {
+	public void testMonatlichFreiVerf√ºgbarerBetrag1() {
 		def result = runDsl("monatlichFreiVerfuegbarerBetrag.formel", [
 			Immobilie: new ImmobilieObject(
 				selbstgenutzt: true,
@@ -33,7 +33,7 @@ class DslTestCase extends GroovyTestCase {
 	}
 	
 	@Test
-	public void testMonatlichFreiVerfügbarerBetrag2() {
+	public void testMonatlichFreiVerf√ºgbarerBetrag2() {
 		def result = runDsl("monatlichFreiVerfuegbarerBetrag.formel", [
 			Immobilie: new ImmobilieObject(
 				selbstgenutzt: false,
@@ -51,7 +51,7 @@ class DslTestCase extends GroovyTestCase {
 		def result = runDsl("mietPruefung.formel", [
 			Immobilie: new ImmobilieObject(
 				monatlicheMiete: 430.0,
-				größe: 60)])
+				gr√∂√üe: 60)])
 		
 		assert result
 	}
@@ -62,7 +62,7 @@ class DslTestCase extends GroovyTestCase {
 			Immobilie: new ImmobilieObject(
 				selbstgenutzt: false,
 				monatlicheMiete: 680.0,
-				größe: 60)])
+				gr√∂√üe: 60)])
 		
 		assert !result
 	}
@@ -89,7 +89,7 @@ class DslTestCase extends GroovyTestCase {
 			Steuern: 350.0,
 			Sozialabgaben: 200.0,
 			sonstigeBelastungen: 0.0,
-			Beruf: "Pensionär",
+			Beruf: "Pension√§r",
 			monatlicheRentenzahlungen: 0.0,
 			monatlichePensionszahlungen: 3200.0
 			]);
@@ -149,7 +149,8 @@ class DslTestCase extends GroovyTestCase {
 			scriptBaseClass: DslDefinition.class.name)
 		
 		GroovyShell gs = new GroovyShell(b, cc)
-		Script s = gs.parse(new File(scriptName))
+		// Dieser aufw√§ndige Aufbau ist aufgrund des Sonderzeichen-Encodings n√∂tig.
+		Script s = gs.parse(new InputStreamReader(new FileInputStream(new File(scriptName)), "UTF-8"))
 		
 		def result = s.run()
 	}

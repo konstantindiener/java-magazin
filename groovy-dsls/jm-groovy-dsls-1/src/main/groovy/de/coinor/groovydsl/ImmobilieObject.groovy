@@ -6,5 +6,5 @@ class ImmobilieObject {
 	
 	def monatlicheMiete
 	
-	def größe
+	def gr√∂√üe
 }

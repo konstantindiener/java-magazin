@@ -4,7 +4,7 @@ class MietFassade {
 
 	def monatlicheMiete
 	
-	MietPruefer fŸr(def groesse) {
+	MietPruefer fÃ¼r(def groesse) {
 		new MietPruefer(monatlicheMiete: monatlicheMiete, groesse: groesse)
 	}
 }
