@@ -1,0 +1,16 @@
+Falls (Beruf, 
+	Renter:
+		monatlicheRentenzahlungen - Steuern - sonstigeBelastungen,
+
+	Pensionär:
+		monatlichePensionszahlungen - Steuern - Sozialabgaben - sonstigeBelastungen,
+
+	Student:
+		monatlichesBruttoeinkommen - sonstigeBelastungen,
+
+	Angestellter:
+		monatlichesBruttoeinkommen - Steuern - Sozialabgaben - sonstigeBelastungen,
+
+	Beamter:
+		monatlichesBruttoeinkommen - Steuern - sonstigeBelastungen
+)
